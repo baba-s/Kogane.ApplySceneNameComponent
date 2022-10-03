@@ -7,9 +7,23 @@ using UnityEngine.SceneManagement;
 namespace Kogane.Internal
 {
     [InitializeOnLoad]
-    internal static class ApplySceneNameComponentEditor
+    [CustomEditor( typeof( ApplySceneNameComponent ) )]
+    internal sealed class ApplySceneNameComponentInspector : Editor
     {
-        static ApplySceneNameComponentEditor()
+        public override void OnInspectorGUI()
+        {
+            if ( GUILayout.Button( "Apply" ) )
+            {
+                var component  = ( ApplySceneNameComponent )target;
+                var gameObject = component.gameObject;
+
+                Undo.RecordObject( gameObject, "Rename" );
+
+                gameObject.name = gameObject.scene.name;
+            }
+        }
+
+        static ApplySceneNameComponentInspector()
         {
             EditorSceneManager.sceneOpened         -= OnSceneOpened;
             EditorSceneManager.sceneOpened         += OnSceneOpened;
