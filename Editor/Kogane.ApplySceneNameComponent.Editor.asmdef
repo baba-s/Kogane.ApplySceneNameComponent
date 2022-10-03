@@ -1,0 +1,18 @@
+﻿{
+    "name": "Kogane.ApplySceneNameComponent.Editor",
+    "rootNamespace": "",
+    "references": [
+        "GUID:759d132b4b82b4752a9e0c403ae1bb8c"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": false,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
